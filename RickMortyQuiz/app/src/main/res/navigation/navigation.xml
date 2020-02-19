@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/questionFragment">
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="android.kevin.rickmortyquiz.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="android.kevin.rickmortyquiz.QuestionFragment"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" >
+        <action
+            android:id="@+id/action_questionFragment_to_cheatpageFragment"
+            app:destination="@id/cheatpageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cheatpageFragment"
+        android:name="android.kevin.rickmortyquiz.CheatPageFragment"
+        android:label="CheatPageFragment" >
+        <argument
+            android:name="question"
+            app:argType="string" />
+        <argument
+            android:name="answer"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
